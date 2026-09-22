@@ -33,21 +33,58 @@
   <!-- Header -->
 <header class="fixed top-0 left-0 w-full bg-gray-800 bg-opacity-90 z-50 shadow-md">
   <div class="container mx-auto flex items-center justify-between px-6 py-4">
-    <h1 class="text-2xl font-bold">Caleb Orukwo</h1>
-    <!-- Toggle Button -->
-    <button id="menu-toggle" class="md:hidden text-blue-400 focus:outline-none">
-      <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-      </svg>
-    </button>
-    <!-- Navigation Menu -->
-    <nav id="menu" class="hidden md:flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 md:static absolute top-16 left-0 w-full md:w-auto bg-gray-800 md:bg-transparent shadow-md md:shadow-none px-6 md:px-0 py-4 md:py-0">
-      <a href="/co" class="hover:text-blue-400">Home</a>
-      <a href="about.php" class="hover:text-blue-400">About</a>
-      <a href="#portfolio" class="hover:text-blue-400">Portfolio</a>
-      <a href="services.php" class="hover:text-blue-400">Services</a>
-      <a href="contact.php" class="hover:text-blue-400">Contact</a>
-    </nav>
+    
+    <div class="flex-1">
+      <h1 class="text-2xl font-bold text-white whitespace-nowrap">Caleb Orukwo</h1>
+    </div>
+
+    <div class="flex-1 flex justify-center">
+      <a href="https://wa.me/2347035466375?text=Hi%20Caleb,%20I'm%20contacting%20from%20your%20portfolio%20website." 
+         target="_blank" 
+         class="whatsapp-blink flex items-center gap-2 px-4 py-2 bg-[#25D366] text-white text-xs font-bold rounded-full transition-all hover:scale-105 shadow-[0_0_15px_rgba(37,211,102,0.4)]">
+        <i class="fab fa-whatsapp text-lg"></i>
+        <span class="hidden sm:inline uppercase tracking-tighter">Let's Chat</span>
+      </a>
+    </div>
+
+    <div class="flex-1 flex justify-end">
+      <button id="menu-toggle" class="md:hidden text-blue-400 focus:outline-none">
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+
+      <nav id="menu" class="hidden md:flex items-center space-x-6">
+        <a href="/co" class="text-gray-300 hover:text-blue-400 font-medium transition-colors">Home</a>
+        <a href="about.php" class="text-gray-300 hover:text-blue-400 font-medium transition-colors">About</a>
+        <a href="#portfolio" class="text-gray-300 hover:text-blue-400 font-medium transition-colors">Portfolio</a>
+        <a href="services.php" class="text-gray-300 hover:text-blue-400 font-medium transition-colors">Services</a>
+        <a href="contact.php" class="text-gray-300 hover:text-blue-400 font-medium transition-colors">Contact</a>
+      </nav>
+    </div>
+
   </div>
 </header>
+
+<style>
+  /* Dominant Blinking Animation */
+  .whatsapp-blink {
+    animation: wa-pulse 2s infinite;
+  }
+
+  @keyframes wa-pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      background-color: #25D366;
+    }
+    50% {
+      box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+      background-color: #128C7E; 
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      background-color: #25D366;
+    }
+  }
+</style>
 <br><br>
