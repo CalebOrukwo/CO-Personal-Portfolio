@@ -1,6 +1,6 @@
 <!-- Footer -->
   <footer class="py-6 bg-gray-900 text-center">
-    <p class="text-sm">© 2025 Caleb Orukwo. All rights reserved.</p>
+    <p class="text-sm">© 2026 Caleb Orukwo. All rights reserved.</p>
   </footer>
 
 </body>
