@@ -1,348 +1,626 @@
 <?php include 'header.php'; ?>
 
-<!-- Hero Section -->
-<section id="hero" class="relative bg-gradient-to-b from-gray-900 to-transparent py-24">
-  <div class="absolute top-0 left-0 w-full h-full bg-cover bg-center opacity-20" style="background-image: url('/co/images/hero-bg.png');"></div>
+<section id="hero" class="relative bg-[#0B1120] overflow-hidden py-32 flex items-center min-h-screen">
+  <canvas id="hero-canvas" class="absolute inset-0 z-0 pointer-events-none opacity-40"></canvas>
+  
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-3/4 h-3/4 bg-blue-500/20 rounded-full blur-[120px] pointer-events-none"></div>
+  
   <div class="container mx-auto px-6 text-center relative z-10">
-    <div class="text-center">
-      <h2 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span class="text-blue-400">Caleb</span></h2>
-      <p class="text-lg md:text-2xl mb-8">Web Developer | Web Apps Expert | Business Builder</p>
-      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-        <a href="#portfolio" class="bg-blue-500 px-6 py-3 rounded-lg hover:bg-blue-600">View My Work</a>
-        <a href="contact.php" class="bg-gray-600 px-6 py-3 rounded-lg hover:bg-gray-700">Let's Collaborate</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Featured Project -->
-<section class="bg-gray-800 text-white py-16">
-  <div class="container mx-auto px-6">
-    <h2 class="text-3xl font-bold text-sky-500 text-center mb-8">Featured Project</h2>
-
-    <div class="glow-border rounded-xl p-1">
-      <div class="bg-gray-700 p-6 rounded-lg shadow-lg grid grid-cols-1 md:grid-cols-3 gap-6 rounded-xl">
-
-        <!-- Project Logo -->
-        <div class="flex justify-center items-center">
-          <img src="https://cxp.com.ng/images/logo/cxp.png"
-               alt="CXP Platform"
-               class="rounded-lg shadow-md max-h-40 object-contain">
-        </div>
-
-        <!-- Project Info -->
-        <div class="col-span-2 space-y-6">
-          <h3 class="text-2xl font-bold text-gray-100">CXP – Creative eXponential Platform</h3>
-          <p class="text-gray-300 leading-relaxed">
-            CXP is a dynamic digital ecosystem built to empower creatives, entrepreneurs and businesses with tools that accelerate growth and innovation. It’s a hub for collaboration, creativity, and exponential opportunities in the modern digital economy.
-          </p>
-
-          <div class="grid grid-cols-2 gap-6">
-            <div>
-              <h4 class="text-lg font-semibold text-gray-400">Launch Date</h4>
-              <p class="text-gray-300">Pending</p>
-            </div>
-            <div>
-              <h4 class="text-lg font-semibold text-gray-400">Status</h4>
-              <p class="text-yellow-400 font-semibold">In Progress</p>
-            </div>
-          </div>
-
-          <div class="flex items-center justify-start space-x-3 mt-4">
-            <i class="fas fa-globe text-sky-500 text-2xl"></i>
-            <span class="text-gray-300 font-medium text-lg">Web Platform</span>
-          </div>
-
-          <!-- View Project Button -->
-          <div class="mt-4">
-            <a href="https://cxp.com.ng" target="_blank"
-               class="inline-block bg-sky-500 hover:bg-sky-600 text-white text-sm font-medium px-6 py-2 rounded-lg shadow-md transition duration-300">
-              <i class="fas fa-arrow-right mr-2"></i> View Project
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- About Section -->
-<section class="bg-gray-800 text-white py-16">
-  <div class="container mx-auto px-6">
-    <div class="flex flex-col md:flex-row items-center justify-center mb-12">
-      <div class="flex-shrink-0 mb-6 md:mb-0 md:mr-8">
-
-        <div class="profile-glow-wrapper w-44 h-44 rounded-full p-[3px] relative overflow-hidden">
-          <div class="absolute inset-0 rounded-full animate-spin-slow bg-gradient-to-tr from-sky-400 via-purple-500 to-cyan-400 z-0"></div>
-          <div class="relative z-10 w-full h-full rounded-full overflow-hidden bg-gray-800">
-            <img src="images/caleb.png" alt="Caleb Orukwo" class="w-full h-full object-cover rounded-full border-4 border-gray-800">
-          </div>
-        </div>
-
-      </div>
-      <div class="text-center md:text-left">
-        <h2 class="text-3xl font-bold text-sky-500 mb-4">Who Am I?</h2>
-        <p class="text-gray-300 leading-relaxed mb-4">
-          I'm Caleb Orukwo — a developer, product thinker, and digital business builder. I create high-impact web applications and help individuals and businesses bring their ideas to life online.
-        </p>
-        <a href="about.php" class="inline-block bg-sky-500 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-sky-600 transition">
-          Learn More
+    <div class="max-w-3xl mx-auto space-y-6">
+      <h2 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-4">
+        Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Caleb</span>
+      </h2>
+      <p class="text-xl md:text-2xl text-gray-300 font-light tracking-wide mb-10">
+        Web Developer <span class="text-cyan-500 font-bold mx-2">|</span> Trainer <span class="text-cyan-500 font-bold mx-2">|</span> Business Builder
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mt-8">
+        <a href="#portfolio" class="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full text-white font-semibold text-lg shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] hover:-translate-y-1 transition-all duration-300">
+          View My Work
+          <i class="fas fa-arrow-down ml-2 group-hover:translate-y-1 transition-transform"></i>
+        </a>
+        <a href="contact.php" class="px-8 py-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-full text-white font-semibold text-lg hover:bg-white/10 hover:-translate-y-1 transition-all duration-300">
+          Let's Collaborate
         </a>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- Skills -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-      <div class="bg-gray-700 p-6 rounded-lg text-center">
-        <i class="fas fa-code text-sky-500 text-4xl mb-4"></i>
-        <h3 class="text-xl font-bold text-gray-300 mb-2">Web Development</h3>
-        <p class="text-gray-400 leading-relaxed">Custom, responsive websites tailored to your business goals.</p>
-      </div>
-      <div class="bg-gray-700 p-6 rounded-lg text-center">
-        <i class="fas fa-mobile-alt text-green-400 text-4xl mb-4"></i>
-        <h3 class="text-xl font-bold text-gray-300 mb-2">Web & Mobile Apps</h3>
-        <p class="text-gray-400 leading-relaxed">Modern applications with performance, security, and scale.</p>
-      </div>
-      <div class="bg-gray-700 p-6 rounded-lg text-center">
-        <i class="fas fa-rocket text-yellow-400 text-4xl mb-4"></i>
-        <h3 class="text-xl font-bold text-gray-300 mb-2">Business Strategy</h3>
-        <p class="text-gray-400 leading-relaxed">Helping startups and brands build products and grow digitally.</p>
-      </div>
+<script>
+(function() {
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  const particleCount = 60; // Increase for more dots
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+
+  class Particle {
+    constructor() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.vx = (Math.random() - 0.5) * 0.5;
+      this.vy = (Math.random() - 0.5) * 0.5;
+      this.size = 1.5;
+    }
+
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+
+      if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+      if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+    }
+
+    draw() {
+      ctx.fillStyle = 'rgba(6, 182, 212, 0.5)';
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  function init() {
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    for (let i = 0; i < particles.length; i++) {
+      particles[i].update();
+      particles[i].draw();
+      
+      // Connection logic
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance < 150) {
+          ctx.strokeStyle = `rgba(6, 182, 212, ${0.2 - (distance / 150) * 0.2})`;
+          ctx.lineWidth = 0.5;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(animate);
+  }
+
+  init();
+  animate();
+})();
+</script>
+
+<section class="bg-[#0B1120] text-white py-20 relative border-t border-white/5 overflow-hidden">
+  <div class="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+  <div class="container mx-auto px-6 max-w-6xl scroll-reveal">
+    <div class="flex items-center justify-center gap-4 mb-12">
+      <div class="h-[1px] w-12 bg-cyan-500"></div>
+      <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 uppercase tracking-widest text-sm">Primary Project</h2>
+      <div class="h-[1px] w-12 bg-cyan-500"></div>
     </div>
 
+    <div class="relative group">
+      <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+      
+<div class="relative bg-gray-900/80 backdrop-blur-xl border border-white/10 p-8 md:p-10 rounded-2xl grid grid-cols-1 md:grid-cols-3 gap-8 items-center group">
+  <div class="flex justify-center items-center bg-gray-800/50 p-6 rounded-xl border border-white/5 h-full transition-colors group-hover:border-cyan-500/30 overflow-hidden">
+    <img src="https://cxp.com.ng/images/logo/cxp.png" 
+         alt="Creators X Pro" 
+         class="logo-float rounded-lg max-h-32 object-contain filter drop-shadow-2xl">
+  </div>
+
+
 <style>
-  .testimonial-card.hidden {
-    display: none;
+  .logo-float {
+    /* The animation stays continuous regardless of hover */
+    animation: float-glow 6s ease-in-out infinite;
+    will-change: transform, filter;
+    transition: transform 0.5s ease;
   }
-  /* Profile picture styling */
-  .profile-initials {
-    width: 60px; /* Adjust size as needed */
-    height: 60px; /* Adjust size as needed */
-    border-radius: 50%; /* Makes it circular */
-    background-color: #3b82f6; /* Blue background for initials */
-    color: #e0f2fe; /* Light blue text for initials */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem; /* Larger font size */
-    font-weight: bold;
-    margin: 0 auto 1.5rem auto; /* Center and add space below */
-    box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.4); /* Subtle border effect */
+
+  @keyframes float-glow {
+    0% {
+      transform: translateY(0px) rotate(0deg);
+      filter: drop-shadow(0 5px 15px rgba(6, 182, 212, 0.2)) brightness(1);
+    }
+    50% {
+      transform: translateY(-10px) rotate(1deg);
+      filter: drop-shadow(0 20px 30px rgba(6, 182, 212, 0.5)) brightness(1.1);
+    }
+    100% {
+      transform: translateY(0px) rotate(0deg);
+      filter: drop-shadow(0 5px 15px rgba(6, 182, 212, 0.2)) brightness(1);
+    }
   }
 </style>
 
-<div class="text-center mb-6">
-  <h3 class="text-2xl font-bold text-sky-400 mb-6">What People Say</h3>
-  <div class="testimonial-container relative overflow-hidden mx-auto max-w-2xl">
-    <div class="testimonial-cards-wrapper flex transition-transform duration-500 ease-in-out">
-      <div class="testimonial-card min-w-full bg-gray-700 p-6 rounded-lg shadow-lg">
-        <div class="profile-initials" data-name="Zubem Uche">ZU</div>
-        <p class="text-gray-300 mb-4">"Caleb transformed our business website into a professional and modern platform. His process was smooth and insightful."</p>
-        <h4 class="text-lg font-semibold text-sky-400">— Zubem Uche</h4>
-      </div>
+        <div class="col-span-2 space-y-5">
+          <div class="flex items-center gap-3">
+             <h3 class="text-3xl font-bold text-white tracking-tight">C X-Pro</h3>
+             <span class="px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[10px] uppercase font-bold tracking-widest">Edutech</span>
+          </div>
+          
+          <p class="text-gray-400 leading-relaxed text-lg">
+            A specialized e-learning architecture engineered for creators and educators. This system automates the delivery of digital courses, management of student progress, and monetization workflows—enabling experts to scale their knowledge without manual intervention.
+          </p>
 
-      <div class="testimonial-card min-w-full bg-gray-700 p-6 rounded-lg shadow-lg hidden">
-        <div class="profile-initials" data-name="Clement Ikojah">CI</div>
-        <p class="text-gray-300 mb-4">"Working with Caleb on our app was a game-changer. He’s both creative and highly technical."</p>
-        <h4 class="text-lg font-semibold text-sky-400">— Clement Ikojah</h4>
-      </div>
+          <div class="flex flex-wrap gap-6 py-4 border-y border-white/10">
+            <div>
+              <h4 class="text-xs uppercase tracking-wider text-gray-500 font-semibold mb-1">Status</h4>
+              <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-sm font-medium border border-emerald-500/20">
+                <i class="fas fa-check-circle text-xs"></i> Live
+              </span>
+            </div>
+            <div>
+              <h4 class="text-xs uppercase tracking-wider text-gray-500 font-semibold mb-1">System Type</h4>
+              <p class="text-gray-200 font-medium flex items-center gap-2">
+                <i class="fas fa-graduation-cap text-cyan-500"></i> LMS & Course Engine
+              </p>
+            </div>
+          </div>
 
-      <div class="testimonial-card min-w-full bg-gray-700 p-6 rounded-lg shadow-lg hidden">
-        <div class="profile-initials" data-name="Samuel Nwaerema">SN</div>
-        <p class="text-gray-300 mb-4">"Great collaboration, clear communication, and an outstanding result. Highly recommend Caleb!"</p>
-        <h4 class="text-lg font-semibold text-sky-400">— Samuel Nwaerema</h4>
-      </div>
-
-      <div class="testimonial-card min-w-full bg-gray-700 p-6 rounded-lg shadow-lg hidden">
-        <div class="profile-initials" data-name="Blessing">BL</div>
-        <p class="text-gray-300 mb-4">"I benefited a lot from Caleb’s web development training. He’s a great teacher and mentor."</p>
-        <h4 class="text-lg font-semibold text-sky-400">— Blessing</h4>
+          <div class="pt-2 flex flex-col sm:flex-row gap-4">
+            <a href="https://cxp.com.ng" target="_blank" class="inline-flex items-center justify-center gap-2 bg-white text-gray-900 hover:bg-cyan-50 font-bold px-6 py-3 rounded-xl shadow-lg transition-all duration-300 hover:-translate-y-1">
+              Launch Platform <i class="fas fa-external-link-alt text-xs ml-1"></i>
+            </a>
+            <div class="flex items-center gap-2 px-4 text-gray-400 text-sm italic">
+               <i class="fas fa-users text-cyan-500/50"></i> Empowering 30+ Creators
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</section>
+
+<section class="bg-[#0B1120] text-white py-20 border-t border-white/5">
+  <div class="container mx-auto px-6 max-w-6xl">
+    
+    <div class="flex flex-col lg:flex-row items-center gap-12 mb-20">
+      <div class="relative flex-shrink-0">
+        <div class="absolute -inset-2 bg-gradient-to-tr from-cyan-400 to-blue-600 rounded-full blur-md opacity-40 animate-pulse"></div>
+        <div class="w-48 h-48 rounded-full p-1 bg-gradient-to-tr from-cyan-400 to-blue-600 relative z-10">
+          <div class="w-full h-full rounded-full overflow-hidden bg-gray-900 border-4 border-[#0B1120]">
+            <img src="https://cxp.com.ng/uploads/avatars/avatar_1.jpg" alt="Caleb Orukwo" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center lg:text-left space-y-6">
+        <h2 class="text-4xl font-bold text-white tracking-tight">Who Am I?</h2>
+        <p class="text-gray-400 leading-relaxed text-lg max-w-2xl">
+          I'm Caleb Orukwo — a developer, product thinker, and digital business builder. I architect high-impact web applications and help individuals and businesses bring their complex ideas to life online through scalable digital systems.
+        </p>
+        <a href="about.php" class="inline-block text-cyan-400 font-semibold hover:text-cyan-300 transition-colors border-b-2 border-cyan-400/30 hover:border-cyan-300 pb-1">
+          Read my full story <i class="fas fa-arrow-right ml-2 text-sm"></i>
+        </a>
+      </div>
+    </div> <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 scroll-reveal">
+      <div class="group bg-gray-800/40 backdrop-blur-sm border border-white/5 p-8 rounded-2xl hover:bg-gray-800/80 hover:-translate-y-2 transition-all duration-500 flex flex-col">
+        <div class="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-500/20 transition-all duration-300">
+          <i class="fas fa-code text-blue-400 text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-3">Custom Web Dev</h3>
+        <p class="text-gray-400 leading-relaxed mb-8">
+          Need a website that actually works for you? I build clean, responsive sites designed to turn your visitors into customers while you focus on your business.
+        </p>
+        <div class="mt-auto">
+          <a href="web-request.php" 
+             class="inline-flex items-center text-sm font-bold text-cyan-400 group-hover:text-white transition-colors">
+            Request a Website <i class="fas fa-arrow-right ml-2 text-[10px]"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="group bg-gray-800/40 backdrop-blur-sm border border-white/5 p-8 rounded-2xl hover:bg-gray-800/80 hover:-translate-y-2 transition-all duration-500 flex flex-col">
+        <div class="w-14 h-14 bg-green-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-green-500/20 transition-all duration-300">
+          <i class="fas fa-brain text-green-400 text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-3">AI & Tech Training</h3>
+        <p class="text-gray-400 leading-relaxed mb-8">
+          I teach high-leverage AI skills and modern web development. Whether you're an adult or want your kids to master the future, I make technical skills easy to learn.
+        </p>
+        <div class="mt-auto">
+          <a href="training-request.php" 
+             class="inline-flex items-center text-sm font-bold text-green-400 group-hover:text-white transition-colors">
+            Book a Training <i class="fas fa-arrow-right ml-2 text-[10px]"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="group bg-gray-800/40 backdrop-blur-sm border border-white/5 p-8 rounded-2xl hover:bg-gray-800/80 hover:-translate-y-2 transition-all duration-500 flex flex-col">
+        <div class="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-purple-500/20 transition-all duration-300">
+          <i class="fas fa-rocket text-purple-400 text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-3">Digital Strategy</h3>
+        <p class="text-gray-400 leading-relaxed mb-8">
+          Stop guessing and start growing. I help you architect the right digital systems and marketing workflows to scale your brand without the manual burnout.
+        </p>
+        <div class="mt-auto">
+          <a href="https://wa.me/2347035466375?text=Hi%20Caleb,%20I%20need%20a%20digital%20strategy%20to%20scale%20my%20business.%20Let's%20connect." 
+             class="inline-flex items-center text-sm font-bold text-purple-400 group-hover:text-white transition-colors">
+            Start Strategizing <i class="fas fa-arrow-right ml-2 text-[10px]"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+<div class="text-center max-w-5xl mx-auto mt-32 px-6">
+  <h3 class="text-xs uppercase tracking-[0.3em] text-cyan-500 font-bold mb-12">Trusted by Visionaries</h3>
+  
+  <div class="relative group" id="testimonial-slider">
+    <div class="absolute -top-10 left-1/2 -translate-x-1/2 text-9xl text-white/5 font-serif pointer-events-none select-none">“</div>
+
+    <div class="testimonial-container relative min-h-[400px] md:min-h-[300px] flex items-center justify-center">
+      
+      <div class="testimonial-card active absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ease-in-out">
+        <div class="relative mb-8">
+          <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-2xl font-bold text-white shadow-[0_0_30px_rgba(6,182,212,0.3)] rotate-3">ZU</div>
+          <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-[#0B1120] rounded-full border border-white/10 flex items-center justify-center">
+            <i class="fas fa-quote-right text-cyan-500 text-[10px]"></i>
+          </div>
+        </div>
+        <p class="text-xl md:text-2xl text-gray-200 font-medium italic mb-8 leading-relaxed max-w-3xl px-4">
+          "Caleb transformed our business website into a professional and modern platform. His process was smooth and insightful."
+        </p>
+        <div class="text-center">
+          <h4 class="text-white font-bold tracking-widest uppercase text-sm">Zubem Uche</h4>
+          <p class="text-cyan-500/60 text-[10px] uppercase mt-1 tracking-tighter font-semibold">Business Lead</p>
+        </div>
+      </div>
+
+      <div class="testimonial-card absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ease-in-out">
+        <div class="relative mb-8">
+          <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-2xl font-bold text-white shadow-[0_0_30px_rgba(168,85,247,0.3)] -rotate-3">CI</div>
+          <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-[#0B1120] rounded-full border border-white/10 flex items-center justify-center">
+            <i class="fas fa-quote-right text-purple-400 text-[10px]"></i>
+          </div>
+        </div>
+        <p class="text-xl md:text-2xl text-gray-200 font-medium italic mb-8 leading-relaxed max-w-3xl px-4">
+          "Working with Caleb on our app was a game-changer. He’s both creative and highly technical."
+        </p>
+        <div class="text-center">
+          <h4 class="text-white font-bold tracking-widest uppercase text-sm">Clement Ikojah</h4>
+          <p class="text-purple-400/60 text-[10px] uppercase mt-1 tracking-tighter font-semibold">Tech Founder</p>
+        </div>
+      </div>
+
+      <div class="testimonial-card absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ease-in-out">
+        <div class="relative mb-8">
+          <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-2xl font-bold text-white shadow-[0_0_30px_rgba(16,185,129,0.3)] rotate-6">SN</div>
+          <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-[#0B1120] rounded-full border border-white/10 flex items-center justify-center">
+            <i class="fas fa-quote-right text-emerald-400 text-[10px]"></i>
+          </div>
+        </div>
+        <p class="text-xl md:text-2xl text-gray-200 font-medium italic mb-8 leading-relaxed max-w-3xl px-4">
+          "Great collaboration, clear communication, and an outstanding result. Highly recommend Caleb!"
+        </p>
+        <div class="text-center">
+          <h4 class="text-white font-bold tracking-widest uppercase text-sm">Samuel Nwaerema</h4>
+          <p class="text-emerald-400/60 text-[10px] uppercase mt-1 tracking-tighter font-semibold">Executive Partner</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-center gap-3 mt-8">
+      <button class="nav-dot active w-8 h-1 rounded-full bg-cyan-500/20 transition-all duration-300"></button>
+      <button class="nav-dot w-2 h-1 rounded-full bg-cyan-500/20 transition-all duration-300"></button>
+      <button class="nav-dot w-2 h-1 rounded-full bg-cyan-500/20 transition-all duration-300"></button>
+    </div>
+  </div>
 </div>
-</div>
+
+<style>
+  .testimonial-card {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    z-index: 0;
+  }
+  .testimonial-card.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    z-index: 10;
+  }
+  .nav-dot.active {
+    background-color: #06b6d4 !important;
+    width: 2rem !important;
+  }
+</style>
+
+<script>
+(function() {
+  const slider = document.getElementById('testimonial-slider');
+  const cards = slider.querySelectorAll('.testimonial-card');
+  const dots = slider.querySelectorAll('.nav-dot');
+  let current = 0;
+  let interval;
+
+  function updateSlider(index) {
+    cards.forEach((card, i) => {
+      if (i === index) {
+        card.classList.add('active');
+        dots[i].classList.add('active');
+      } else {
+        card.classList.remove('active');
+        dots[i].classList.remove('active');
+      }
+    });
+  }
+
+  function next() {
+    current = (current + 1) % cards.length;
+    updateSlider(current);
+  }
+
+  function start() {
+    interval = setInterval(next, 5000);
+  }
+
+  // Dot Clicks
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      clearInterval(interval);
+      current = i;
+      updateSlider(current);
+      start();
+    });
+  });
+
+  start();
+})();
+</script>
+</section>
+
+<section id="portfolio" class="bg-[#0B1120] py-24 relative overflow-hidden">
+  <div class="absolute top-0 right-0 w-1/2 h-full bg-blue-900/5 blur-[150px] pointer-events-none"></div>
+  
+  <div class="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
+    <div class="text-center mb-16 scroll-reveal">
+      <h2 class="text-4xl font-extrabold text-white tracking-tight mb-4">Ecosystem & Projects</h2>
+      <p class="text-lg text-gray-400 max-w-2xl mx-auto">A selection of digital systems and platforms architected for growth.</p>
+    </div>
+
+    <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      </div>
+  </div>
+</section>
+
+<section id="contact" class="bg-[#0B1120] text-white py-24 border-t border-white/5">
+  <div class="container mx-auto px-6 md:px-12 max-w-6xl">
+    <div class="bg-gradient-to-br from-gray-900 to-gray-800 border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-[80px]"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 relative z-10">
+        
+        <div class="lg:col-span-2 space-y-6">
+          <h2 class="text-4xl font-extrabold text-white">Let's build<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Systems over Hustle.</span></h2>
+          <p class="text-gray-400 text-lg">Have a project idea or need technical architecture? Let's discuss how we can scale your vision.</p>
+        </div>
+
+        <div class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <a href="https://wa.me/2347035466375?text=Hi%20Caleb%20Orukwo" target="_blank" class="sm:col-span-2 flex items-center p-6 bg-gradient-to-r from-emerald-600 to-emerald-500 rounded-2xl hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-emerald-900/20 group">
+            <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mr-6 group-hover:bg-white/30 transition-colors">
+              <i class="fab fa-whatsapp text-white text-3xl"></i>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-white mb-1">Chat on WhatsApp</h4>
+              <p class="text-emerald-100 text-sm">Fastest way to reach me — usually replies in minutes.</p>
+            </div>
+          </a>
+
+          <a href="mailto:Caleborukwo@gmail.com" class="flex items-center p-5 bg-gray-800/50 border border-white/5 rounded-2xl hover:bg-gray-800 hover:-translate-y-1 transition-all duration-300">
+            <i class="fas fa-envelope text-cyan-400 text-2xl mr-4"></i>
+            <span class="text-gray-300 font-medium truncate">Email Me</span>
+          </a>
+
+          <a href="https://ng.linkedin.com/in/corukwo" target="_blank" class="flex items-center p-5 bg-gray-800/50 border border-white/5 rounded-2xl hover:bg-gray-800 hover:-translate-y-1 transition-all duration-300">
+            <i class="fab fa-linkedin text-blue-500 text-2xl mr-4"></i>
+            <span class="text-gray-300 font-medium">LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Scoped active class for the new fade-in slider logic */
+.testimonial-card.active {
+  opacity: 1;
+  z-index: 10;
+}
+</style>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
+    // Upgraded Testimonial Logic - Opacity Fade instead of Display None
     const cards = document.querySelectorAll(".testimonial-card");
     let currentCard = 0;
     let autoRotateInterval;
-    const rotationSpeed = 8000; // 8000 milliseconds = 8 seconds
-
-    // Function to generate initials and set them
-    function generateInitials() {
-      cards.forEach(card => {
-        const nameElement = card.querySelector('h4');
-        const initialsElement = card.querySelector('.profile-initials');
-        if (nameElement && initialsElement) {
-          const name = nameElement.textContent.replace('— ', '').trim();
-          const nameParts = name.split(' ');
-          let initials = '';
-          if (nameParts.length > 0) {
-            initials += nameParts[0].charAt(0);
-            if (nameParts.length > 1) {
-              initials += nameParts[1].charAt(0);
-            } else if (nameParts[0].length > 1) { // If only one name, take first two letters
-                initials = nameParts[0].substring(0,2);
-            }
-          }
-          initialsElement.textContent = initials.toUpperCase();
-        }
-      });
-    }
+    const rotationSpeed = 6000; // Faster, punchier rotation (6s)
 
     function showCard(index) {
       cards.forEach((card, i) => {
         if (i === index) {
-          card.classList.remove("hidden");
+          card.classList.add("active");
         } else {
-          card.classList.add("hidden");
+          card.classList.remove("active");
         }
       });
     }
 
-    // Function to move to the next card
     function nextCard() {
       currentCard = (currentCard + 1) % cards.length;
       showCard(currentCard);
     }
 
-    // Function to start the automatic rotation
     function startAutoRotate() {
-      stopAutoRotate(); // Ensure no multiple intervals are running
+      stopAutoRotate();
       autoRotateInterval = setInterval(nextCard, rotationSpeed);
     }
 
-    // Function to stop the automatic rotation
     function stopAutoRotate() {
       clearInterval(autoRotateInterval);
     }
 
-    // Pause rotation when the user hovers over the testimonial container
     const testimonialContainer = document.querySelector(".testimonial-container");
-    testimonialContainer.addEventListener("mouseenter", stopAutoRotate);
-    testimonialContainer.addEventListener("mouseleave", startAutoRotate);
+    if(testimonialContainer) {
+        testimonialContainer.addEventListener("mouseenter", stopAutoRotate);
+        testimonialContainer.addEventListener("mouseleave", startAutoRotate);
+    }
 
-    // Initial setup
-    generateInitials(); // Generate initials when the DOM is ready
-    showCard(currentCard);
-    startAutoRotate(); // Start the rotation when the page loads
+    if(cards.length > 0) {
+        showCard(currentCard);
+        startAutoRotate();
+    }
   });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const projects = [
+    { 
+      name: 'Myroqqu', 
+      desc: 'A crypto investment platform built to provide users with a structured digital investment experience.', 
+      status: 'In Progress', 
+      color: 'yellow', 
+      url: 'https://myroqqu.com',
+      stack: ['PHP', 'MySQL', 'JS', 'Bootstrap'] 
+    },
+    { 
+      name: 'Capledgers', 
+      desc: 'A digital finance platform designed to provide structured tools for modern investment management.', 
+      status: 'Completed', 
+      color: 'green', 
+      url: 'https://capledgers.com',
+      stack: ['PHP', 'MySQL', 'JS', 'Bootstrap'] 
+    },
+    { 
+      name: 'Luiwe', 
+      desc: 'A multi-vendor e-commerce platform designed to connect customers with multiple sellers in one marketplace.', 
+      status: 'In Progress', 
+      color: 'yellow', 
+      url: 'https://luiwe.com',
+      stack: ['PHP', 'MySQL', 'JS', 'Tailwind', 'React'] 
+    },
+    { 
+      name: 'Jasdor Blog', 
+      desc: 'An accessible blogging platform designed for a visually impaired blogger to share content online.', 
+      status: 'Completed', 
+      color: 'green', 
+      url: 'https://jasdorblog.com',
+      stack: ['PHP', 'MySQL', 'JS', 'Bootstrap'] 
+    },
+    { 
+      name: 'CXP', 
+      desc: 'A digital education and creator platform built around online courses, learning and creator monetization.', 
+      status: 'Completed', 
+      color: 'green', 
+      url: 'https://cxp.com.ng',
+      stack: ['PHP', 'MySQL', 'JS', 'Bootstrap'] 
+    },
+    { 
+      name: 'VIP Community', 
+      desc: 'An exclusive digital community designed for networking, premium resources and collaborative growth.', 
+      status: 'Pending', 
+      color: 'gray', 
+      stack: ['PHP', 'MySQL', 'JS', 'Tailwind', 'React'] 
+    }
+  ];
+
+  const projectGrid = document.getElementById('project-grid');
+
+  const bgMap = {
+    green: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+    yellow: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
+    gray: 'bg-gray-500/10 text-gray-400 border-gray-500/20'
+  };
+
+  if (projectGrid) {
+    projectGrid.innerHTML = projects.map(proj => {
+      const stackHtml = proj.stack.map(tech => 
+        `<span class="px-2 py-1 bg-gray-800 text-gray-300 text-[10px] uppercase tracking-wider rounded border border-gray-700">${tech}</span>`
+      ).join('');
+
+      const pillClass = bgMap[proj.color];
+
+      return `
+        <div class="group relative bg-gray-800/30 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:bg-gray-800/60 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(6,182,212,0.1)] transition-all duration-500 flex flex-col justify-between h-full overflow-hidden scroll-reveal">
+          
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+          
+          <div class="relative z-10">
+            <div class="flex justify-between items-start mb-4">
+              <h4 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                ${proj.name}
+              </h4>
+
+              ${
+                proj.url
+                  ? `
+                    <a href="${proj.url}" target="_blank" rel="noopener noreferrer"
+                       class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:rotate-45"
+                       aria-label="Visit ${proj.name}">
+                      <i class="fas fa-arrow-up text-cyan-400 text-sm"></i>
+                    </a>
+                  `
+                  : `
+                    <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                      <i class="fas fa-lock text-gray-500 text-sm"></i>
+                    </div>
+                  `
+              }
+            </div>
+
+            <p class="text-gray-400 mb-6 leading-relaxed">
+              ${proj.desc}
+            </p>
+            
+            <div class="flex flex-wrap gap-2 mb-6 opacity-40 group-hover:opacity-100 transition-opacity duration-300">
+              ${stackHtml}
+            </div>
+          </div>
+          
+          <div class="mt-auto border-t border-white/5 pt-4 relative z-10">
+            <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full border ${pillClass}">
+              <i class="fas fa-circle text-[8px] mr-1 opacity-70"></i> ${proj.status}
+            </span>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    initScrollReveal();
+  }
+
+  function initScrollReveal() {
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  }
+});
 </script>
-
-<!-- Portfolio Section -->
-<section id="portfolio" class="bg-gray-900 py-12">
-  <div class="container mx-auto px-6 md:px-12">
-    <h2 class="text-4xl font-extrabold text-center text-sky-400 mb-8">My Portfolio</h2>
-    <p class="text-center text-lg mb-10 text-gray-300">Here are some of the projects I’ve worked on with their current status.</p>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- iShop -->
-      <div class="bg-gray-800 rounded-lg shadow-lg p-6">
-        <h4 class="text-2xl font-bold mb-3 text-gray-200">iShop</h4>
-        <p class="text-gray-400 mb-4">An innovative e-commerce platform reshaping online shopping.</p>
-        <span class="inline-block px-3 py-1 text-sm font-medium bg-green-100 text-green-700 rounded-full">Completed</span>
-      </div>
-
-      <!-- CXP -->
-      <div class="bg-gray-800 rounded-lg shadow-lg p-6">
-        <h4 class="text-2xl font-bold mb-3 text-gray-200">CXP</h4>
-        <p class="text-gray-400 mb-4">Creative eXponential Platform empowering creatives and businesses.</p>
-        <span class="inline-block px-3 py-1 text-sm font-medium bg-yellow-100 text-yellow-700 rounded-full">In Progress</span>
-      </div>
-
-      <!-- Capledgers -->
-      <div class="bg-gray-800 rounded-lg shadow-lg p-6">
-        <h4 class="text-2xl font-bold mb-3 text-gray-200">Capledgers</h4>
-        <p class="text-gray-400 mb-4">A crypto-based investment portal providing transparent, modern digital finance tools.</p>
-        <span class="inline-block px-3 py-1 text-sm font-medium bg-yellow-100 text-yellow-700 rounded-full">In Progress</span>
-      </div>
-
-      <!-- Uphouse -->
-      <div class="bg-gray-800 rounded-lg shadow-lg p-6">
-        <h4 class="text-2xl font-bold mb-3 text-gray-200">Uphouse</h4>
-        <p class="text-gray-400 mb-4">A portal dedicated to simplifying housing and real estate solutions.</p>
-        <span class="inline-block px-3 py-1 text-sm font-medium bg-red-100 text-red-700 rounded-full">Pending</span>
-      </div>
-
-      <!-- Cxpress Hub -->
-      <div class="bg-gray-800 rounded-lg shadow-lg p-6">
-        <h4 class="text-2xl font-bold mb-3 text-gray-200">Cxpress Hub</h4>
-        <p class="text-gray-400 mb-4">A hub for tech, social, and digital services—powering modern needs.</p>
-        <span class="inline-block px-3 py-1 text-sm font-medium bg-red-100 text-red-700 rounded-full">Pending</span>
-      </div>
-
-      <!-- Starbliz -->
-      <div class="bg-gray-800 rounded-lg shadow-lg p-6">
-        <h4 class="text-2xl font-bold mb-3 text-gray-200">Starbliz</h4>
-        <p class="text-gray-400 mb-4">A social platform for creators and digital entrepreneurs (Coming soon).</p>
-        <span class="inline-block px-3 py-1 text-sm font-medium bg-red-100 text-red-700 rounded-full">Pending</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="bg-gray-900 text-white py-12">
-  <div class="container mx-auto px-6 md:px-12">
-    <h2 class="text-4xl font-extrabold mb-8 text-sky-400">Contact Me</h2>
-    <p class="text-lg mb-10 text-gray-300">Connect with me directly. WhatsApp is the fastest way to get a response!</p>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <a href="https://wa.me/2347081169661?text=Hi%20Caleb%20Orukwo" target="_blank" class="flex items-start bg-green-700 p-6 rounded-lg shadow-xl hover:bg-green-600 transition transform hover:scale-105 lg:col-span-2">
-        <i class="fab fa-whatsapp text-white text-4xl mr-5"></i>
-        <div>
-          <h4 class="text-2xl font-bold text-white mb-1">WhatsApp</h4>
-          <p class="text-white text-lg">+2347081169661</p>
-          <p class="text-green-100 text-sm mt-1">Fastest way to reach me — let's chat!</p>
-        </div>
-      </a>
-      <a href="mailto:Caleborukwo@gmail.com" class="flex items-start bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition">
-        <i class="fas fa-envelope text-sky-400 text-3xl mr-4"></i>
-        <div>
-          <p class="text-gray-300">Caleborukwo@gmail.com</p>
-        </div>
-      </a>
-      <a href="https://www.facebook.com/share/16QF9pjedo/" target="_blank" class="flex items-start bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition">
-        <i class="fab fa-facebook text-blue-600 text-3xl mr-4"></i>
-        <div>
-          <p class="text-gray-300">Caleb Orukwo</p>
-        </div>
-      </a>
-      <a href="https://ng.linkedin.com/in/corukwo" target="_blank" class="flex items-start bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition">
-        <i class="fab fa-linkedin text-sky-500 text-3xl mr-4"></i>
-        <div>
-          <p class="text-gray-300">Caleb Orukwo</p>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<style>
-@keyframes borderGlow {
-  0%, 100% {
-    box-shadow: 0 0 3px 1px rgba(59, 130, 246, 0.6), 0 0 6px 2px rgba(99, 102, 241, 0.5);
-  }
-  50% {
-    box-shadow: 0 0 5px 2px rgba(16, 185, 129, 0.7), 0 0 10px 3px rgba(34, 211, 238, 0.6);
-  }
-}
-.glow-border {
-  animation: borderGlow 6s ease-in-out infinite;
-  background: linear-gradient(135deg, #3b82f6, #6366f1, #10b981, #22d3ee);
-  padding: 2px;
-  border-radius: 1rem;
-}
-@keyframes slowSpin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-.animate-spin-slow {
-  animation: slowSpin 12s linear infinite;
-}
-</style>
 
 <?php include 'footer.php'; ?>
